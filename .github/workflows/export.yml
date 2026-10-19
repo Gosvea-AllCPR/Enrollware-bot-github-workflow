@@ -1,9 +1,8 @@
 name: Enrollware Data Export
 
 on:
-  schedule:
-    # Run daily at 2:00 AM UTC
-    - cron: '0 2 * * *'
+  # Scheduled exports run on the local enrollware_data_sync host.
+  # Keep this legacy workflow available only for explicit manual runs.
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -92,4 +91,4 @@ jobs:
       with:
         name: error-screenshot
         path: error.png
-        if-no-files-found: ignore 
+        if-no-files-found: ignore
